@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Вечерняя Партия</title>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				font-family: Verdana, sans-serif;
+			}
+
+			body {
+				background: linear-gradient(135deg, #6a1b9a, #f57c00);
+				color: #fff;
+				line-height: 1.6;
+			}
+
+			header {
+				text-align: center;
+				padding: 30px 20px;
+			}
+
+			header img {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				object-fit: cover;
+				margin: 10px;
+			}
+
+			nav {
+				background-color: rgba(0, 0, 0, 0.3);
+				text-align: center;
+				padding: 10px 0;
+			}
+
+			nav a {
+				display: inline-block;
+				color: #fff;
+				margin: 8px 12px;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 1rem;
+				transition: transform 0.3s ease;
+			}
+
+			nav a:hover {
+				text-decoration: underline;
+				transform: translateX(-5px);
+			}
+
+			main {
+				padding: 30px 15px;
+				max-width: 900px;
+				margin: auto;
+			}
+
+			section {
+				margin-bottom: 40px;
+			}
+
+			h2 {
+				margin-bottom: 10px;
+				font-size: 1.5rem;
+			}
+
+			p, li {
+				font-size: 1rem;
+			}
+
+			.slider {
+				position: relative;
+				width: 100%;
+				max-width: 600px;
+				margin: 20px auto;
+				overflow: hidden;
+				border-radius: 10px;
+				box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+			}
+
+			.slides {
+				display: flex;
+				transition: transform 0.5s ease-in-out;
+			}
+
+			.slide {
+				min-width: 100%;
+				box-sizing: border-box;
+				padding: 10px;
+				text-align: center;
+			}
+
+			.slide img {
+				max-width: 100%;
+				border-radius: 10px;
+			}
+
+			.slider-buttons {
+				text-align: center;
+				margin-top: 10px;
+			}
+
+			.slider-buttons button {
+				background: rgba(0, 0, 0, 0.5);
+				border: none;
+				color: #fff;
+				padding: 10px 18px;
+				margin: 0 5px;
+				cursor: pointer;
+				font-size: 1rem;
+				border-radius: 5px;
+			}
+
+			.slider-buttons button:hover {
+				background: rgba(0, 0, 0, 0.8);
+			}
+
+			.organizers {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+				justify-content: center;
+			}
+
+			.card {
+				background-color: rgba(0, 0, 0, 0.2);
+				border-radius: 10px;
+				padding: 15px;
+				width: 250px;
+				text-align: center;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.card:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+			}
+
+			.card img {
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				object-fit: cover;
+				margin-bottom: 10px;
+			}
+
+			footer {
+				background-color: rgba(0, 0, 0, 0.3);
+				text-align: center;
+				padding: 20px 15px;
+				font-size: 0.9rem;
+			}
+
+			@media (max-width: 600px) {
+				header h1 {
+					font-size: 1.5rem;
+				}
+				nav a {
+					display: block;
+					margin: 10px auto;
+					font-size: 1.1rem;
+				}
+				.slider-buttons button {
+					width: 100px;
+					padding: 8px 12px;
+				}
+				.slider {
+					max-width: 100%;
+				}
+				h2 {
+					font-size: 1.3rem;
+				}
+				p, li {
+					font-size: 0.95rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="https://sun9-12.userapi.com/impg/cy68ce3UG-y97hZN7w3LZVAt3BDoSUV5qDtd1A/gOJQL5PTLdg.jpg" alt="СПбГУПТД">
+			<img src="https://sun9-40.userapi.com/impg/5aK9ZNGrgZRXbEAFgyvGzv7W1WU0TvAQkKjrJg/40Q2ni86FIs.jpg" alt="ВП">
+			<img src="https://sun9-10.userapi.com/impg/c636018/v636018765/3931d/O85hsrZ0JZs.jpg" alt="СтудСовет">
+			<h1>"Вечерняя Партия"</h1>
+			<p>Настольные игры, спортивная мафия, настольно-ролевые и многое другое!</p>
+		</header>
+
+		<nav>
+			<a href="#about">О нас</a>
+			<a href="#games">Библиотека игр</a>
+			<a href="#organizers">Организаторы</a>
+			<a href="#contact">Контакты</a>
+		</nav>
+
+		<main>
+			<section id="about">
+				<h2>О нас</h2>
+				<p>Вечерняя Партия — клуб настольных игр СПбГУПТД. Мы объединяем студентов, увлечённых настольными и ролевыми играми, а также проводим регулярные мероприятия, турниры и вечеринки для всех желающих.</p>
+			</section>
+
+			<section id="games">
+				<h2>Наши игры</h2>
+				<div class="slider">
+					<div class="slides" id="slides">
+						<div class="slide">
+							<img src="https://www.gamepark.ru/upload/iblock/183/nastolnaya_igra_7_chudes_1.jpg" alt="7 Чудес">
+							<p>
+								<strong>7 Чудес</strong><br>Жанр: карточная стратегия, 3–7 игроков</p>
+						</div>
+						<div class="slide">
+							<img src="https://images.crowdgames.ru/images/products/1/2300/1002899708/Без_имени-1_0000_1__123_.jpg" alt="Корни">
+							<p>
+								<strong>Корни</strong><br>Жанр: асимметричная стратегия, 2–4 игроков</p>
+						</div>
+						<div class="slide">
+							<img src="https://avatars.mds.yandex.net/get-mpic/5278457/img_id4534302742873248755.jpeg/orig" alt="Бэнг">
+							<p>
+								<strong>Бэнг</strong><br>Жанр: дедукция, вестерн, 4–7 игроков</p>
+						</div>
+					</div>
+				</div>
+				<div class="slider-buttons">
+					<button onclick="prevSlide()">← Назад</button>
+					<button onclick="nextSlide()">Вперёд →</button>
+				</div>
+			</section>
+
+			<section id="organizers">
+				<h2>Организаторы клуба</h2>
+				<div class="organizers">
+					<div class="card">
+						<img src="https://sun9-15.userapi.com/s/v1/ig2/XUGNJWwARmPhrW2q3Jy0oTk-uSD4SOTBFtQ7g24Q27YyGCFlL5Xl1_6EKtaH4O6UE8FumApNuCq9NYAiHI-M3rhi.jpg" alt="Павел Веселов">
+						<h3>Павел Веселов</h3>
+						<p>
+							<strong>Глава клуба</strong></p>
+						<blockquote>"Настолки — это способ объединить самых разных людей."</blockquote>
+					</div>
+					<div class="card">
+						<img src="https://sun9-58.userapi.com/s/v1/ig2/EPe9MFxtqGoA_1Xqcfoss_LxyIEQo2ItZOqDItzKkugMqnmdSCxQh3Zijv6hpCqtXxCoA01bTRmtPIraHH6fpieb.jpg" alt="Ирина Хапинина">
+						<h3>Хапинина Ирина</h3>
+						<p>
+							<strong>Глава Спортивной мафии</strong></p>
+						<blockquote>"Каждая партия — это маленькое приключение."</blockquote>
+					</div>
+					<div class="card">
+						<img src="https://sun9-64.userapi.com/s/v1/ig2/uLWXY2kjAsoKA7f1sQVLFSecL80-dK9IL1xafCloM3Q69_uCFUeAJK-_SHA2a2EKINcrUq893FrQnjFzS4iEUrW-.jpg" alt="Мария Белова">
+						<h3>Ермошина Алина</h3>
+						<p>
+							<strong>Секретарь</strong></p>
+						<blockquote>"Мы создаём атмосферу, в которую хочется вернуться."</blockquote>
+					</div>
+				</div>
+			</section>
+
+			<section id="contact">
+				<h2>Контакты</h2>
+				<p><a href="https://vk.com/partiasuitd" target="_blank">Группа ВК</a></p>
+				<p><a href="https://vk.me/join/WXgk2mKqsvRmfVn09Evz4kFdOxllnNwTCns=" target="_blank">Чат ВК</a></p>
+				<p><a href="#">Канал в Telegram</a></p>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; 2025 Клуб "Вечерняя Партия". Все права защищены.</p>
+		</footer>
+
+		<script>
+			let currentIndex = 0;
+			const slides = document.getElementById("slides");
+			const totalSlides = slides.children.length;
+
+			function showSlide(index)
+			{
+				if (index < 0)
+					index = totalSlides - 1;
+				if (index >= totalSlides)
+					index = 0;
+				currentIndex = index;
+				slides.style.transform = `translateX(-${index * 100}%)`;
+			}
+
+			function prevSlide()
+			{
+				showSlide(currentIndex - 1);
+			}
+
+			function nextSlide()
+			{
+				showSlide(currentIndex + 1);
+			}
+		</script>
+	</body>
+</html>
